@@ -1153,6 +1153,161 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   flex-shrink: 0;
 }
 
+/* --- HERO VIBE PICKER --- */
+.hero__vibe-pick {
+  margin-bottom: 32px;
+}
+.vibe-pick__label {
+  font-size: 0.813rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-sec);
+  margin-bottom: 12px;
+}
+.vibe-pick__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.vibe-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.813rem;
+  color: var(--text);
+  min-height: 44px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+[data-theme="light"] .vibe-tag {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+.vibe-tag:active {
+  border-color: var(--orange);
+  background: var(--orange-glow);
+  color: var(--orange);
+}
+.vibe-tag svg {
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+/* --- CLASS CARD POPULAR BADGE --- */
+.class-card--hot {
+  border-color: var(--orange);
+}
+.class-card__popular {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.688rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 50px;
+  background: var(--orange);
+  color: #fff;
+}
+
+/* --- TESTIMONIAL JOURNEY TAGS --- */
+.testimonial-card__journey {
+  margin-bottom: 12px;
+}
+.journey-tag {
+  display: inline-block;
+  font-size: 0.688rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 50px;
+  background: rgba(255, 107, 53, 0.08);
+  color: var(--orange);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+.testimonial-card__result {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* --- PRICING NOTE --- */
+.pricing-note {
+  text-align: center;
+  color: var(--text-sec);
+  font-size: 0.875rem;
+  margin-top: 32px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* --- QUICK ACTIONS (Contact) --- */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.quick-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 8px;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  min-height: 48px;
+  transition: border-color 0.2s ease;
+}
+[data-theme="light"] .quick-action {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.quick-action:active {
+  border-color: var(--orange);
+}
+.quick-action svg {
+  color: var(--orange);
+}
+.quick-action span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* --- FAQ CTA --- */
+.faq-cta {
+  text-align: center;
+  margin-top: 40px;
+  padding: 32px 20px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+[data-theme="light"] .faq-cta {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.faq-cta p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
 /* ============================================
    BREAKPOINT 1: 600px+
    ============================================ */
@@ -1170,6 +1325,7 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
     padding: 48px 40px;
     justify-content: space-between;
   }
+  .vibe-pick__tags { gap: 10px; }
 }
 
 /* ============================================
@@ -1257,4 +1413,7 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   .faq-item.open .faq-item__a { padding: 0 14px 16px; }
   .nav__inner { padding: 14px 4%; }
   .sticky-cta { bottom: 16px; right: 12px; padding: 12px 18px; font-size: 0.813rem; }
+  .vibe-tag { padding: 8px 14px; font-size: 0.75rem; }
+  .quick-actions { gap: 8px; }
+  .quick-action { padding: 12px 6px; }
 }

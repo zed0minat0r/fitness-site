@@ -2,6 +2,16 @@
 
 ## 2026-03-30
 
+### Spark Pass: Mobile-First Section Enhancements
+- Hero: "What's your vibe?" quick-pick class type selector with tap-friendly pill tags (Strength, Flow, HIIT, Recovery)
+- Classes: "Popular" badge on HIIT Burn card with orange border highlight
+- Testimonials: journey duration tags (6-month journey, Day 1 win, 3 years and counting) above each card
+- Testimonials: added second result badge to Rachel's card (Full splits)
+- Pricing: summary note below grid reinforcing no-contract, cancel-anytime value prop
+- Contact: quick-action buttons (Call, Email, Directions) with icons for mobile-first tap access
+- FAQ: "Still have questions? Talk to Us" CTA card at bottom of FAQ section
+- All new elements mobile-first, no hover dependencies, minimal animations, light mode compatible
+
 ### Refiner Pass: Audit Top Fixes (Rec #1, #2, #5 + bonus)
 - Hero: multi-layer gradient background with warm radials for visual energy (Audit Rec #1)
 - Hero: subtle scanline overlay texture for depth
