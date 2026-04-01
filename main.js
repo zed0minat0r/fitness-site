@@ -158,10 +158,10 @@
         var amountEl = card.querySelector('.price-amount');
         var periodEl = card.querySelector('.price-period');
         if (amountEl) {
-          amountEl.style.opacity = '0';
+          amountEl.classList.add('price-amount--fading');
           setTimeout(function () {
             amountEl.textContent = price;
-            amountEl.style.opacity = '1';
+            amountEl.classList.remove('price-amount--fading');
           }, 150);
         }
         if (periodEl) {
