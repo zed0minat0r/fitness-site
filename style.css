@@ -1626,6 +1626,118 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
 /* ============================================
    BREAKPOINT 1: 600px+
    ============================================ */
+/* ============================================
+   MOBILE CENTER-ALIGNMENT (base / < 600px)
+   Ensures uniform center alignment on mobile
+   ============================================ */
+
+/* Hero — center all hero content on mobile */
+.hero__content {
+  text-align: center;
+}
+.hero__sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero__actions {
+  justify-content: center;
+}
+.vibe-pick__tags {
+  justify-content: center;
+}
+.hero__stats {
+  justify-content: center;
+  text-align: center;
+}
+.stat {
+  align-items: center;
+}
+
+/* Class cards — center content on mobile */
+.class-card {
+  text-align: center;
+  align-items: center;
+}
+.class-card__header {
+  flex-direction: column;
+  align-items: center;
+}
+.class-card__times {
+  align-items: center;
+}
+
+/* Testimonial cards — center on mobile */
+.testimonial-card {
+  text-align: center;
+}
+.testimonial-card__journey {
+  text-align: center;
+}
+.testimonial-card__stars {
+  text-align: center;
+}
+.testimonial-card__result {
+  justify-content: center;
+}
+.testimonial-card__author {
+  justify-content: center;
+}
+
+/* Contact section — center headings, info, and socials on mobile */
+.contact-form-wrap .section__title,
+.contact-form-wrap .section__sub {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-social-proof {
+  justify-content: center;
+  text-align: center;
+}
+.contact-info {
+  text-align: center;
+}
+.contact-info h3 {
+  text-align: center;
+}
+.info-block {
+  text-align: center;
+}
+.contact-socials {
+  justify-content: center;
+}
+
+/* Pricing features — center on mobile */
+.pricing-card__features {
+  text-align: center;
+}
+.pricing-card__features li {
+  text-align: center;
+  padding-left: 0;
+}
+.pricing-card__features li::before {
+  position: static;
+  margin-right: 6px;
+}
+
+/* Footer bottom — center on mobile */
+.footer__bottom {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+/* Quick actions — center text */
+.quick-action {
+  text-align: center;
+}
+
+/* FAQ CTA — already centered, ensure consistency */
+.faq-item__a p {
+  text-align: center;
+}
+
 @media (min-width: 600px) {
   .class-grid {
     display: grid;
@@ -1671,6 +1783,34 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   .footer__top { grid-template-columns: repeat(2, 1fr); text-align: left; }
   .footer__socials { justify-content: flex-start; }
   .footer__nav a { justify-content: flex-start; }
+
+  /* Revert mobile center-alignment for tablet+ */
+  .hero__content { text-align: left; }
+  .hero__actions { justify-content: flex-start; }
+  .hero__sub { margin-left: 0; margin-right: 0; }
+  .stat { align-items: flex-start; }
+  .hero__stats { justify-content: flex-start; }
+
+  .class-card { text-align: left; align-items: flex-start; }
+  .class-card__header { flex-direction: row; align-items: flex-start; }
+  .class-card__times { align-items: flex-start; }
+
+  .testimonial-card { text-align: left; }
+  .testimonial-card__result { justify-content: flex-start; }
+  .testimonial-card__author { justify-content: flex-start; }
+
+  .pricing-card__features { text-align: left; }
+  .pricing-card__features li { text-align: left; padding-left: 24px; }
+  .pricing-card__features li::before { position: absolute; margin-right: 0; }
+
+  .footer__bottom { flex-direction: row; justify-content: space-between; text-align: left; gap: 0; }
+
+  .contact-info { text-align: left; }
+  .contact-info h3 { text-align: left; }
+  .info-block { text-align: left; }
+  .contact-socials { justify-content: flex-start; }
+
+  .faq-item__a p { text-align: left; }
 }
 
 /* ============================================

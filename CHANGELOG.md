@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-04-01
+
+### Pixel — Mobile Center-Alignment Audit & Fix
+- Audited all sections at 375px mobile viewport for center alignment consistency
+- Hero: centered tag, title, subtitle, buttons, vibe picker tags, and stats bar
+- Classes: centered card content, headers, icons, durations, times, and book buttons
+- Trainers: already centered (confirmed)
+- Pricing: centered feature list items with inline checkmarks on mobile
+- Trial Banner: already centered (confirmed)
+- Testimonials: centered journey tags, stars, quotes, result badges, and author rows
+- Community: already centered (confirmed)
+- Contact: centered section title/sub, social proof bar, info blocks, and social links
+- FAQ: centered answer text on mobile
+- Footer: stacked and centered footer bottom row on mobile
+- All changes revert to left-aligned layout at 600px+ breakpoint
+
 ## 2026-03-30
 
 ### Cleanup: Remove dead CSS/HTML and consolidate duplicate selectors
