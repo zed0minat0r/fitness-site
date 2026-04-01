@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron & Flow Fitness | Strength. Mobility. Power.</title>
+  <meta name="description" content="Boutique fitness studio combining strength training and mobility yoga. Transform your body with expert trainers, dynamic classes, and a community that pushes you forward.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="logo-iron">IRON</span><span class="logo-amp">&</span><span class="logo-flow">FLOW</span>
+      </a>
+      <button class="nav__burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#trainers">Trainers</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Results</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav__cta">Start Free Trial</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-shapes">
+      <div class="shape shape--1"></div>
+      <div class="shape shape--2"></div>
+      <div class="shape shape--3"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__tag">Boutique Fitness Studio</p>
+      <h1 class="hero__title">
+        BUILD <span class="text-orange">STRENGTH.</span><br>
+        FIND <span class="text-orange">FLOW.</span><br>
+        OWN YOUR <span class="text-orange">POWER.</span>
+      </h1>
+      <p class="hero__sub">Where iron meets intention. Strength training, mobility, yoga, and HIIT -- all under one roof with coaches who know your name.</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary">Start Your Free Trial</a>
+        <a href="#classes" class="btn btn--ghost">View Schedule</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><span class="stat__num">500+</span><span class="stat__label">Members</span></div>
+        <div class="stat"><span class="stat__num">40+</span><span class="stat__label">Classes/Week</span></div>
+        <div class="stat"><span class="stat__num">8</span><span class="stat__label">Expert Coaches</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLASSES ===== -->
+  <section class="section classes" id="classes">
+    <div class="container">
+      <h2 class="section__title fade-in">Our <span class="text-orange">Classes</span></h2>
+      <p class="section__sub fade-in">Four disciplines. One studio. Every level welcome.</p>
+      <div class="class-grid">
+
+        <div class="class-card fade-in">
+          <div class="class-card__icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="20" width="40" height="8" rx="4" stroke="currentColor" stroke-width="3"/><rect x="8" y="14" width="6" height="20" rx="2" stroke="currentColor" stroke-width="3"/><rect x="34" y="14" width="6" height="20" rx="2" stroke="currentColor" stroke-width="3"/></svg>
+          </div>
+          <h3>Strength Lab</h3>
+          <p>Barbell, dumbbell, and bodyweight fundamentals. Progressive overload with expert form coaching.</p>
+          <div class="class-card__times">
+            <span>Mon/Wed/Fri</span>
+            <span>6 AM | 12 PM | 6 PM</span>
+          </div>
+        </div>
+
+        <div class="class-card fade-in">
+          <div class="class-card__icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="12" r="6" stroke="currentColor" stroke-width="3"/><path d="M24 18v10M18 38l6-10 6 10M14 28h20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Flow Yoga</h3>
+          <p>Vinyasa-inspired sequences to build flexibility, balance, and mental clarity. All levels.</p>
+          <div class="class-card__times">
+            <span>Tue/Thu/Sat</span>
+            <span>7 AM | 5 PM | 7 PM</span>
+          </div>
+        </div>
+
+        <div class="class-card fade-in">
+          <div class="class-card__icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M10 38V24l14-14 14 14v14" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 38V30h12v8" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="20" r="3" fill="currentColor"/></svg>
+          </div>
+          <h3>HIIT Burn</h3>
+          <p>30-minute scorchers. Max effort intervals to torch calories and build explosive endurance.</p>
+          <div class="class-card__times">
+            <span>Mon-Sat</span>
+            <span>5:30 AM | 12 PM | 5 PM</span>
+          </div>
+        </div>
+
+        <div class="class-card fade-in">
+          <div class="class-card__icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M12 36c0-8 6-14 12-20 6 6 12 12 12 20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M24 16v22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M18 28c3-2 6-2 6 0s3 2 6 0" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Mobility Reset</h3>
+          <p>Deep stretch, foam rolling, and joint mobilization. The secret weapon for recovery and longevity.</p>
+          <div class="class-card__times">
+            <span>Wed/Fri/Sun</span>
+            <span>8 AM | 4 PM</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRAINERS ===== -->
+  <section class="section trainers" id="trainers">
+    <div class="container">
+      <h2 class="section__title fade-in">Meet Your <span class="text-orange">Coaches</span></h2>
+      <p class="section__sub fade-in">Certified. Passionate. They'll remember your deadlift PR.</p>
+      <div class="trainer-grid">
+
+        <div class="trainer-card fade-in">
+          <div class="trainer-card__avatar" aria-hidden="true">
+            <div class="avatar avatar--male" style="--hair:#3a2518;--skin:#c68642;--shirt:#FF6B35">
+              <div class="avatar__head"><div class="avatar__hair"></div><div class="avatar__face"><div class="avatar__eyes"></div><div class="avatar__mouth"></div></div></div>
+              <div class="avatar__body"></div>
+            </div>
+          </div>
+          <h3>Marcus Cole</h3>
+          <p class="trainer-card__role">Strength & Powerlifting</p>
+          <p class="trainer-card__bio">CSCS certified. 12 years coaching. Former competitive powerlifter. Believes everyone has a deadlift PR waiting.</p>
+        </div>
+
+        <div class="trainer-card fade-in">
+          <div class="trainer-card__avatar" aria-hidden="true">
+            <div class="avatar avatar--female" style="--hair:#1a0a00;--skin:#8d5524;--shirt:#FF6B35">
+              <div class="avatar__head"><div class="avatar__hair avatar__hair--long"></div><div class="avatar__face"><div class="avatar__eyes"></div><div class="avatar__mouth"></div></div></div>
+              <div class="avatar__body"></div>
+            </div>
+          </div>
+          <h3>Priya Sharma</h3>
+          <p class="trainer-card__role">Yoga & Mobility</p>
+          <p class="trainer-card__bio">E-RYT 500. Specializes in athletes' mobility. Helped 200+ clients eliminate chronic pain through intentional movement.</p>
+        </div>
+
+        <div class="trainer-card fade-in">
+          <div class="trainer-card__avatar" aria-hidden="true">
+            <div class="avatar avatar--male" style="--hair:#f0c040;--skin:#fdbcb4;--shirt:#FF6B35">
+              <div class="avatar__head"><div class="avatar__hair"></div><div class="avatar__face"><div class="avatar__eyes"></div><div class="avatar__mouth"></div></div></div>
+              <div class="avatar__body"></div>
+            </div>
+          </div>
+          <h3>Jake Lindstrom</h3>
+          <p class="trainer-card__role">HIIT & Conditioning</p>
+          <p class="trainer-card__bio">ACE certified. Former D1 athlete. Designs workouts that push limits while keeping you injury-free.</p>
+        </div>
+
+        <div class="trainer-card fade-in">
+          <div class="trainer-card__avatar" aria-hidden="true">
+            <div class="avatar avatar--female" style="--hair:#2c1608;--skin:#c68642;--shirt:#FF6B35">
+              <div class="avatar__head"><div class="avatar__hair avatar__hair--long"></div><div class="avatar__face"><div class="avatar__eyes"></div><div class="avatar__mouth"></div></div></div>
+              <div class="avatar__body"></div>
+            </div>
+          </div>
+          <h3>Nia Thompson</h3>
+          <p class="trainer-card__role">Strength & Flow Fusion</p>
+          <p class="trainer-card__bio">NASM-CPT + RYT 200. Bridges the gap between iron and intention. Her fusion classes are the studio's hidden gem.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <h2 class="section__title fade-in">Simple <span class="text-orange">Pricing</span></h2>
+      <p class="section__sub fade-in">No contracts. No hidden fees. Cancel anytime.</p>
+      <div class="pricing-grid">
+
+        <div class="pricing-card fade-in">
+          <h3 class="pricing-card__name">Basic</h3>
+          <div class="pricing-card__price"><span class="price-dollar">$</span><span class="price-amount">49</span><span class="price-period">/mo</span></div>
+          <ul class="pricing-card__features">
+            <li>8 classes per month</li>
+            <li>Access to all class types</li>
+            <li>Locker room access</li>
+            <li>Community events</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--full">Get Started</a>
+        </div>
+
+        <div class="pricing-card pricing-card--featured fade-in">
+          <div class="pricing-card__badge">Most Popular</div>
+          <h3 class="pricing-card__name">Pro</h3>
+          <div class="pricing-card__price"><span class="price-dollar">$</span><span class="price-amount">89</span><span class="price-period">/mo</span></div>
+          <ul class="pricing-card__features">
+            <li>Unlimited classes</li>
+            <li>1 personal training session/mo</li>
+            <li>Nutrition guide access</li>
+            <li>Priority booking</li>
+            <li>Guest pass (1/mo)</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary btn--full">Start Free Trial</a>
+        </div>
+
+        <div class="pricing-card fade-in">
+          <h3 class="pricing-card__name">Elite</h3>
+          <div class="pricing-card__price"><span class="price-dollar">$</span><span class="price-amount">149</span><span class="price-period">/mo</span></div>
+          <ul class="pricing-card__features">
+            <li>Unlimited classes</li>
+            <li>4 personal training sessions/mo</li>
+            <li>Custom nutrition plan</li>
+            <li>Recovery suite access</li>
+            <li>Unlimited guest passes</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--full">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section__title fade-in">Real <span class="text-orange">Results</span></h2>
+      <p class="section__sub fade-in">Don't take our word for it. Hear from the Iron & Flow community.</p>
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"I walked in unable to touch my toes. Six months later I'm deadlifting 225 and doing full splits. This place changed my life."</blockquote>
+          <div class="testimonial-card__author">
+            <div class="testimonial-avatar">R</div>
+            <div><strong>Rachel M.</strong><span>Member since 2024</span></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"The coaches actually care. Marcus spotted a weakness in my squat form on day one and fixed it. Best investment in myself."</blockquote>
+          <div class="testimonial-card__author">
+            <div class="testimonial-avatar">D</div>
+            <div><strong>David K.</strong><span>Member since 2023</span></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"I've tried every gym in the city. Iron & Flow is the only one where I actually look forward to going. The energy is unmatched."</blockquote>
+          <div class="testimonial-card__author">
+            <div class="testimonial-avatar">S</div>
+            <div><strong>Sarah L.</strong><span>Member since 2025</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form-wrap fade-in">
+          <h2 class="section__title">Start Your <span class="text-orange">Journey</span></h2>
+          <p class="section__sub">First class is on us. Fill this out and we'll get you booked.</p>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" required placeholder="Your first name">
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" required placeholder="Your last name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+            </div>
+            <div class="form-group">
+              <label for="interest">I'm interested in...</label>
+              <select id="interest" name="interest">
+                <option value="">Select a class type</option>
+                <option value="strength">Strength Lab</option>
+                <option value="yoga">Flow Yoga</option>
+                <option value="hiit">HIIT Burn</option>
+                <option value="mobility">Mobility Reset</option>
+                <option value="all">All of the above</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Claim Your Free Class</button>
+          </form>
+        </div>
+
+        <div class="contact-info fade-in">
+          <h3>Find <span class="text-orange">Us</span></h3>
+          <div class="info-block">
+            <h4>Address</h4>
+            <p>742 Iron Way, Suite 100<br>Philadelphia, PA 19103</p>
+          </div>
+          <div class="info-block">
+            <h4>Hours</h4>
+            <p>Mon - Fri: 5:30 AM - 9:00 PM<br>Saturday: 7:00 AM - 6:00 PM<br>Sunday: 8:00 AM - 2:00 PM</p>
+          </div>
+          <div class="info-block">
+            <h4>Contact</h4>
+            <p>hello@ironandflow.com<br>(215) 555-0142</p>
+          </div>
+          <div class="location-map">
+            <div class="map-placeholder">
+              <svg viewBox="0 0 64 64" fill="none" width="48" height="48"><path d="M32 8C22 8 14 16 14 26c0 14 18 30 18 30s18-16 18-30c0-10-8-18-18-18z" stroke="#FF6B35" stroke-width="3"/><circle cx="32" cy="26" r="6" stroke="#FF6B35" stroke-width="3"/></svg>
+              <p>Philadelphia, PA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="logo-iron">IRON</span><span class="logo-amp">&</span><span class="logo-flow">FLOW</span>
+          <p>Strength meets intention.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#classes">Classes</a>
+          <a href="#trainers">Trainers</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" width="22" height="22"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M16.36 16.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M16.36 7.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" width="22" height="22"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Iron & Flow Fitness. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
