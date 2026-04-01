@@ -699,6 +699,59 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
 }
 .trial-card .btn--primary:active { transform: scale(0.97); }
 
+/* --- COMMUNITY STATEMENT --- */
+.community { padding: 40px 0; }
+.community-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 107, 53, 0.15);
+  border-radius: var(--radius);
+  padding: 36px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.community-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), transparent);
+}
+.community-card__title {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.community-card__text {
+  color: var(--text-sec);
+  max-width: 600px;
+  margin: 0 auto 24px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.community-card__values {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.community-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--orange);
+  background: var(--orange-glow);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
 /* --- TESTIMONIALS --- */
 .testimonials { background: var(--bg-card); }
 [data-theme="light"] .testimonials { background: #eee; }
@@ -1472,6 +1525,7 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
     padding: 48px 40px;
     justify-content: space-between;
   }
+  .community-card { padding: 48px 40px; }
   .vibe-pick__tags { gap: 10px; }
   .footer__top { grid-template-columns: repeat(2, 1fr); text-align: left; }
   .footer__socials { justify-content: flex-start; }
