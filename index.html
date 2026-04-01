@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iron & Flow Fitness | Strength. Mobility. Power.</title>
   <meta name="description" content="Boutique fitness studio combining strength training and mobility yoga. Transform your body with expert trainers, dynamic classes, and a community that pushes you forward.">
+  <meta name="theme-color" content="#1a1a1a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
@@ -137,7 +138,8 @@
           </div>
         </div>
 
-        <div class="class-card fade-in">
+        <div class="class-card class-card--hot fade-in">
+          <span class="class-card__popular">Popular</span>
           <div class="class-card__header">
             <div class="class-card__icon">
               <svg viewBox="0 0 48 48" fill="none"><path d="M14 38V10l8 6 8-6v28" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 20h16M14 28h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="34" cy="14" r="5" stroke="currentColor" stroke-width="2.5"/><path d="M34 19v5M31.5 22h5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
@@ -303,6 +305,7 @@
         </div>
 
       </div>
+      <p class="pricing-note fade-in">All plans include locker room access, towel service, and free parking. Cancel anytime &mdash; no contracts.</p>
     </div>
   </section>
 
@@ -327,10 +330,14 @@
       <div class="testimonial-grid">
 
         <div class="testimonial-card fade-in">
+          <div class="testimonial-card__journey">
+            <span class="journey-tag">6-month journey</span>
+          </div>
           <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <blockquote>"I walked in unable to touch my toes. Six months later I'm deadlifting 225 and doing full splits. This place changed my life."</blockquote>
           <div class="testimonial-card__result">
             <span class="result-badge">Deadlift: 0 &rarr; 225 lbs</span>
+            <span class="result-badge">Full splits</span>
           </div>
           <div class="testimonial-card__author">
             <div class="testimonial-avatar">R</div>
@@ -339,6 +346,9 @@
         </div>
 
         <div class="testimonial-card fade-in">
+          <div class="testimonial-card__journey">
+            <span class="journey-tag">Day 1 win</span>
+          </div>
           <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <blockquote>"The coaches actually care. Marcus spotted a weakness in my squat form on day one and fixed it. Best investment in myself."</blockquote>
           <div class="testimonial-card__result">
@@ -351,6 +361,9 @@
         </div>
 
         <div class="testimonial-card fade-in">
+          <div class="testimonial-card__journey">
+            <span class="journey-tag">3 years and counting</span>
+          </div>
           <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <blockquote>"I've tried every gym in the city. Iron & Flow is the only one where I actually look forward to going. The energy is unmatched."</blockquote>
           <div class="testimonial-card__result">
@@ -417,6 +430,20 @@
 
         <div class="contact-info fade-in">
           <h3>Find <span class="text-orange">Us</span></h3>
+          <div class="quick-actions">
+            <a href="tel:+12155550142" class="quick-action">
+              <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Call</span>
+            </a>
+            <a href="mailto:hello@ironandflow.com" class="quick-action">
+              <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Email</span>
+            </a>
+            <a href="https://maps.google.com/?q=742+Iron+Way+Philadelphia+PA+19103" class="quick-action" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+              <span>Directions</span>
+            </a>
+          </div>
           <div class="info-block">
             <h4>Address</h4>
             <p>742 Iron Way, Suite 100<br>Philadelphia, PA 19103</p>
@@ -512,6 +539,30 @@
           </div>
         </div>
       </div>
+      <div class="faq-cta fade-in">
+        <p>Still have questions?</p>
+        <a href="#contact" class="btn btn--primary">Talk to Us</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== INSTAGRAM ===== -->
+  <section class="section instagram" id="instagram">
+    <div class="container">
+      <h2 class="section__title fade-in">Follow the <span class="text-orange">Grind</span></h2>
+      <p class="section__sub fade-in">Sweat, PRs, and community moments &mdash; straight from the floor.</p>
+      <div class="insta-grid fade-in">
+        <div class="insta-placeholder"><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" width="24" height="24"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></div></div>
+        <div class="insta-placeholder"><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" width="24" height="24"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></div></div>
+        <div class="insta-placeholder"><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" width="24" height="24"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></div></div>
+        <div class="insta-placeholder"><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" width="24" height="24"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></div></div>
+        <div class="insta-placeholder"><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" width="24" height="24"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></div></div>
+        <div class="insta-placeholder"><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" width="24" height="24"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></div></div>
+      </div>
+      <div class="insta-cta fade-in">
+        <a href="#" class="btn btn--ghost"><svg viewBox="0 0 24 24" fill="none" width="18" height="18" style="vertical-align:middle;margin-right:8px"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>Follow @ironandflow</a>
+      </div>
     </div>
   </section>
 
@@ -520,15 +571,32 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <span class="logo-iron">IRON</span><span class="logo-amp">&</span><span class="logo-flow">FLOW</span>
+          <span class="logo-iron">IRON</span><span class="logo-amp">&amp;</span><span class="logo-flow">FLOW</span>
           <p>Strength meets intention.</p>
+          <div class="footer__socials">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><rect x="2" y="4" width="20" height="16" rx="4" stroke="currentColor" stroke-width="2"/><path d="M10 9l5 3-5 3V9z" fill="currentColor"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="footer__links">
-          <a href="#classes">Classes</a>
-          <a href="#trainers">Trainers</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+        <div class="footer__nav">
+          <div class="footer__links">
+            <a href="#classes">Classes</a>
+            <a href="#trainers">Trainers</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer__contact">
+            <p>742 Iron Way, Suite 100, Philadelphia, PA 19103</p>
+            <p>(215) 555-0142 &middot; hello@ironandflow.com</p>
+          </div>
         </div>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" width="22" height="22"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M16.36 16.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M16.36 7.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -536,7 +604,7 @@
         </button>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2026 Iron & Flow Fitness. All rights reserved.</p>
+        <p>&copy; 2026 Iron &amp; Flow Fitness. All rights reserved.</p>
       </div>
     </div>
   </footer>
