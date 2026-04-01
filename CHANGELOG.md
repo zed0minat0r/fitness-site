@@ -100,3 +100,11 @@
 - Light theme gets brighter shimmer pass; reduced-motion users are covered by existing wildcard rule
 - CSS-only, no JS added
 - 3 tasks defined, agent team deploying
+
+### Builder — Hero Photo Infrastructure & Trainer Avatar Img Support (Audit Rec #4)
+- Added `.hero__image` container behind hero gradient — ready for a background photo with dark overlay
+- Dark overlay auto-adapts to light/dark themes via `::after` pseudo-element
+- Added `.trainer-card__avatar > img` CSS: absolute-positioned, object-fit cover, z-index above SVG fallback
+- Trainer avatars now accept `<img>` tags that layer over the existing SVG silhouettes (drop-in photo upgrade)
+- HTML comment in first trainer card shows the pattern for adding photos
+- Zero visual change to current site — purely infrastructure for photography upgrade
