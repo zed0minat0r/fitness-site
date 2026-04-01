@@ -2,6 +2,11 @@
 
 ## 2026-03-30
 
+### Cleanup: Remove dead CSS/HTML and consolidate duplicate selectors
+- Removed ~75 lines of duplicate CSS selectors (stat__divider, btn--pulse, class-card__header, class-card__intensity, class-card__duration, trainer-card__certs, cert-badge)
+- Removed dead .hero__texture div from HTML and its CSS (~16 lines) — visual energy already handled by .hero__overlay
+- File sizes: style.css 34K (1421 lines), main.js 8.4K (272 lines), index.html 36K (618 lines)
+
 ### Builder Pass: Footer overhaul, hero texture, icon fixes
 - Footer: full 4-column grid layout (brand/nav/contact/CTA) with social links, address, and conversion CTA
 - Footer: theme toggle moved to bottom bar, mobile stacks to single column, 2-col at 600px+, 4-col at 900px+

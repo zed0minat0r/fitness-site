@@ -246,22 +246,6 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
 .shape--2 { width: 300px; height: 300px; bottom: 10%; left: -80px; }
 .shape--3 { width: 200px; height: 200px; top: 40%; right: 20%; background: var(--text); opacity: 0.03; }
 
-/* Hero texture overlay for visual energy */
-.hero__texture {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.04;
-  background-image:
-    radial-gradient(circle at 20% 50%, var(--orange) 1px, transparent 1px),
-    radial-gradient(circle at 80% 20%, var(--orange) 1px, transparent 1px),
-    radial-gradient(circle at 60% 80%, var(--orange) 0.5px, transparent 0.5px);
-  background-size: 40px 40px, 60px 60px, 30px 30px;
-}
-[data-theme="light"] .hero__texture {
-  opacity: 0.03;
-}
 
 .hero__content { position: relative; z-index: 1; max-width: 680px; }
 .hero__tag {
@@ -1092,82 +1076,10 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   display: block;
 }
 
-/* --- STAT DIVIDER --- */
-.stat__divider {
-  width: 1px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.1);
-  align-self: center;
-}
-[data-theme="light"] .stat__divider {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-/* --- HERO CTA PULSE --- */
-.btn--pulse {
-  animation: pulse-shadow 2.5s ease-in-out infinite;
-}
-@keyframes pulse-shadow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.4); }
-  50% { box-shadow: 0 0 0 10px rgba(255, 107, 53, 0); }
-}
-
-/* --- CLASS CARD HEADER / INTENSITY / DURATION --- */
-.class-card__header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 4px;
-}
-.class-card__intensity {
-  display: flex;
-  gap: 3px;
-  align-items: center;
-  padding-top: 4px;
-}
-.class-card__intensity span {
-  display: block;
-  width: 6px;
-  height: 14px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.12);
-}
-[data-theme="light"] .class-card__intensity span {
-  background: rgba(0, 0, 0, 0.1);
-}
-.class-card__intensity[data-level="1"] span:nth-child(1),
-.class-card__intensity[data-level="2"] span:nth-child(-n+2),
-.class-card__intensity[data-level="3"] span:nth-child(-n+3),
-.class-card__intensity[data-level="4"] span {
-  background: var(--orange);
-}
-.class-card__duration {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-sec);
-  margin-bottom: 8px;
-}
-
-/* --- TRAINER CERT BADGES --- */
-.trainer-card__certs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  margin-bottom: 10px;
-}
-.cert-badge {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 3px 10px;
-  border-radius: 50px;
-  background: rgba(255, 107, 53, 0.12);
-  color: var(--orange);
-}
+/* (Duplicate selectors removed — see originals above for:
+   .stat__divider, .btn--pulse, .class-card__header,
+   .class-card__intensity, .class-card__duration,
+   .trainer-card__certs, .cert-badge) */
 
 /* --- STICKY MOBILE CTA --- */
 .sticky-cta {
