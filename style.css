@@ -485,6 +485,18 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   height: 100%;
 }
 
+.trainer-card__specialty {
+  display: inline-block;
+  font-size: 0.688rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 50px;
+  background: var(--orange-glow);
+  color: var(--orange);
+  margin-bottom: 8px;
+}
 .trainer-card h3 { margin-bottom: 4px; }
 .trainer-card__role {
   color: var(--orange);
@@ -809,6 +821,9 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   margin-bottom: 14px;
   letter-spacing: 2px;
 }
+.star-partial {
+  opacity: 0.4;
+}
 .testimonial-card blockquote {
   font-size: 0.938rem;
   line-height: 1.7;
@@ -862,6 +877,9 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
 }
 
 .testimonial-card__result {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   margin-bottom: 16px;
 }
 .result-badge {
@@ -1189,6 +1207,33 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
+/* Newsletter form */
+.footer__newsletter { margin-top: 20px; }
+.footer__newsletter h4 { margin-bottom: 10px; }
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+}
+.newsletter-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-card);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+}
+[data-theme="light"] .newsletter-form input {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+.newsletter-form input:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px var(--orange-glow);
+}
+
 /* Theme toggle */
 .theme-toggle {
   background: var(--bg-card);
@@ -1371,12 +1416,6 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   color: var(--orange);
   border: 1px solid rgba(255, 107, 53, 0.2);
 }
-.testimonial-card__result {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
 /* --- PRICING NOTE --- */
 .pricing-note {
   text-align: center;
@@ -1473,9 +1512,14 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
 .insta-placeholder:active {
   border-color: var(--orange);
 }
-.insta-icon {
+/* .insta-icon removed — unused in markup */
+.insta-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--text-sec);
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .insta-cta {
   text-align: center;
