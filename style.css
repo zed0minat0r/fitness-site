@@ -201,6 +201,34 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   position: relative;
   padding: 100px 5% 60px;
   overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 50% at 70% 30%, rgba(255, 107, 53, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 15% 75%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 90% 85%, rgba(255, 107, 53, 0.06) 0%, transparent 25%),
+    conic-gradient(from 200deg at 80% 60%, rgba(255, 107, 53, 0.04) 0deg, transparent 60deg, transparent 360deg),
+    linear-gradient(170deg, var(--bg) 0%, #111 50%, #0d0d0d 100%);
+}
+[data-theme="light"] .hero {
+  background:
+    radial-gradient(ellipse 80% 50% at 70% 30%, rgba(255, 107, 53, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 15% 75%, rgba(255, 107, 53, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 90% 85%, rgba(255, 107, 53, 0.04) 0%, transparent 25%),
+    conic-gradient(from 200deg at 80% 60%, rgba(255, 107, 53, 0.03) 0deg, transparent 60deg, transparent 360deg),
+    linear-gradient(170deg, var(--bg) 0%, #eaeaea 50%, #e0e0e0 100%);
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, transparent 40%, rgba(255, 107, 53, 0.03) 40%, rgba(255, 107, 53, 0.03) 41%, transparent 41%),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.012) 2px, rgba(255,255,255,0.012) 4px);
+  pointer-events: none;
+  z-index: 0;
+}
+[data-theme="light"] .hero__overlay {
+  background:
+    linear-gradient(135deg, transparent 40%, rgba(255, 107, 53, 0.02) 40%, rgba(255, 107, 53, 0.02) 41%, transparent 41%),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.008) 2px, rgba(0,0,0,0.008) 4px);
 }
 .hero__bg-shapes {
   position: absolute;
@@ -223,12 +251,12 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: clamp(0.7rem, 2.2vw, 0.875rem);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   color: var(--orange);
   margin-bottom: 16px;
-  padding: 6px 16px;
+  padding: 6px 14px;
   border: 1px solid var(--orange);
   border-radius: 50px;
 }
@@ -244,9 +272,9 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
 
 .hero__stats {
   display: flex;
-  gap: 20px;
+  gap: 12px;
   align-items: center;
-  padding: 20px 24px;
+  padding: 16px 14px;
   background: var(--bg-card);
   border-radius: var(--radius);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -259,7 +287,7 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
 .stat__num {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 4.5vw, 1.8rem);
   color: var(--orange);
 }
 .stat__label { font-size: 0.75rem; color: var(--text-sec); text-transform: uppercase; letter-spacing: 0.08em; }
@@ -398,100 +426,27 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
-/* CSS Avatars */
+/* Silhouette Avatars */
 .trainer-card__avatar {
-  width: 100px;
-  height: 100px;
+  width: 96px;
+  height: 96px;
   margin: 0 auto 20px;
   position: relative;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 3px solid var(--orange);
+  overflow: hidden;
 }
-.avatar {
+.avatar-silhouette {
   width: 100%;
   height: 100%;
-  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.avatar__head {
-  width: 52px;
-  height: 52px;
-  position: relative;
-  margin-bottom: 4px;
-}
-.avatar__face {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--skin);
-  position: absolute;
-  top: 6px;
-  left: 2px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
 }
-.avatar__eyes {
-  display: flex;
-  gap: 12px;
-  margin-top: -2px;
-}
-.avatar__eyes::before, .avatar__eyes::after {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #2a2a2a;
-}
-.avatar__mouth {
-  width: 10px;
-  height: 5px;
-  border-radius: 0 0 10px 10px;
-  background: #c0392b;
-}
-.avatar__hair {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 52px;
-  height: 28px;
-  border-radius: 26px 26px 0 0;
-  background: var(--hair);
-  z-index: 1;
-}
-.avatar__hair--long {
-  height: 40px;
-  border-radius: 26px 26px 8px 8px;
-  width: 56px;
-  left: -2px;
-}
-.avatar__hair--long::after {
-  content: '';
-  position: absolute;
-  bottom: -14px;
-  left: 2px;
-  width: 12px;
-  height: 22px;
-  background: var(--hair);
-  border-radius: 0 0 6px 6px;
-}
-.avatar__hair--long::before {
-  content: '';
-  position: absolute;
-  bottom: -14px;
-  right: 2px;
-  width: 12px;
-  height: 22px;
-  background: var(--hair);
-  border-radius: 0 0 6px 6px;
-}
-.avatar__body {
-  width: 64px;
-  height: 36px;
-  background: var(--shirt);
-  border-radius: 20px 20px 0 0;
+.avatar-silhouette svg {
+  width: 100%;
+  height: 100%;
 }
 
 .trainer-card h3 { margin-bottom: 4px; }
@@ -973,7 +928,7 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   padding: 0 20px;
 }
 .faq-item.open .faq-item__a {
-  max-height: 200px;
+  max-height: 300px;
   padding: 0 20px 18px;
 }
 .faq-item__a p {
@@ -1069,6 +1024,135 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
 }
 .form-success p { color: var(--text-sec); }
 
+/* --- NAV SCROLL STATE --- */
+.nav--scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- NAV BACKDROP (tap outside to close) --- */
+.nav__backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav__backdrop.active {
+  display: block;
+}
+
+/* --- STAT DIVIDER --- */
+.stat__divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  align-self: center;
+}
+[data-theme="light"] .stat__divider {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* --- HERO CTA PULSE --- */
+.btn--pulse {
+  animation: pulse-shadow 2.5s ease-in-out infinite;
+}
+@keyframes pulse-shadow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(255, 107, 53, 0); }
+}
+
+/* --- CLASS CARD HEADER / INTENSITY / DURATION --- */
+.class-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.class-card__intensity {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  padding-top: 4px;
+}
+.class-card__intensity span {
+  display: block;
+  width: 6px;
+  height: 14px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.12);
+}
+[data-theme="light"] .class-card__intensity span {
+  background: rgba(0, 0, 0, 0.1);
+}
+.class-card__intensity[data-level="1"] span:nth-child(1),
+.class-card__intensity[data-level="2"] span:nth-child(-n+2),
+.class-card__intensity[data-level="3"] span:nth-child(-n+3),
+.class-card__intensity[data-level="4"] span {
+  background: var(--orange);
+}
+.class-card__duration {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-sec);
+  margin-bottom: 8px;
+}
+
+/* --- TRAINER CERT BADGES --- */
+.trainer-card__certs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.cert-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 50px;
+  background: rgba(255, 107, 53, 0.12);
+  color: var(--orange);
+}
+
+/* --- STICKY MOBILE CTA --- */
+.sticky-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 14px 22px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.sticky-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.sticky-cta:active {
+  transform: scale(0.96);
+}
+.sticky-cta svg {
+  flex-shrink: 0;
+}
+
 /* ============================================
    BREAKPOINT 1: 600px+
    ============================================ */
@@ -1118,6 +1202,8 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   .hero__content { max-width: 720px; }
 
   .footer__inner { flex-direction: row; justify-content: space-between; }
+
+  .sticky-cta { display: none; }
 }
 
 /* ============================================
@@ -1127,4 +1213,48 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   .section { padding: 120px 0; }
   .hero__sub { font-size: 1.15rem; }
   .stat__num { font-size: 2.2rem; }
+}
+
+/* ============================================
+   ACCESSIBILITY: Reduced Motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto; }
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+  .btn--pulse { animation: none; }
+  .sticky-cta { transition: none; }
+}
+
+/* ============================================
+   SMALL MOBILE: 375px and below
+   ============================================ */
+@media (max-width: 399px) {
+  .hero__stats {
+    gap: 8px;
+    padding: 14px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stat__label { font-size: 0.688rem; }
+  .hero__tag { font-size: 0.688rem; letter-spacing: 0.06em; padding: 5px 12px; }
+  .hero__actions .btn { width: 100%; text-align: center; }
+  .pricing-card { padding: 28px 20px; }
+  .pricing-toggle { gap: 10px; }
+  .pricing-toggle__label { font-size: 0.813rem; }
+  .trial-card { padding: 28px 20px; }
+  .trial-card .btn--lg { padding: 14px 28px; font-size: 0.875rem; white-space: nowrap; }
+  .faq-item__q { padding: 16px 14px; font-size: 0.875rem; }
+  .faq-item__a { padding: 0 14px; }
+  .faq-item.open .faq-item__a { padding: 0 14px 16px; }
+  .nav__inner { padding: 14px 4%; }
+  .sticky-cta { bottom: 16px; right: 12px; padding: 12px 18px; font-size: 0.813rem; }
 }

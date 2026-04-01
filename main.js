@@ -5,25 +5,40 @@
 (function () {
   'use strict';
 
-  // --- Hamburger Nav ---
+  // --- Hamburger Nav + Backdrop (tap outside to close) ---
   var burger = document.getElementById('burger');
   var navLinks = document.getElementById('navLinks');
 
+  // Create backdrop for tap-outside-to-close
+  var backdrop = document.createElement('div');
+  backdrop.className = 'nav__backdrop';
+  document.body.appendChild(backdrop);
+
+  function closeNav() {
+    navLinks.classList.remove('open');
+    burger.classList.remove('active');
+    backdrop.classList.remove('active');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
   burger.addEventListener('click', function () {
-    var isOpen = navLinks.classList.toggle('open');
-    burger.classList.toggle('active');
-    burger.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    var isOpen = navLinks.classList.contains('open');
+    if (isOpen) {
+      closeNav();
+    } else {
+      navLinks.classList.add('open');
+      burger.classList.add('active');
+      backdrop.classList.add('active');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
   });
 
-  // Close nav on link click
+  backdrop.addEventListener('click', closeNav);
+
   navLinks.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      navLinks.classList.remove('open');
-      burger.classList.remove('active');
-      burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeNav);
   });
 
   // --- Scroll Fade-In (Intersection Observer) ---
@@ -202,7 +217,7 @@
       '<p>We\'ll reach out within 24 hours to book your free class. Get ready to sweat.</p>' +
       '</div>';
 
-    // Reset after 4 seconds
+    // Reset after 8 seconds (gives user time to read)
     setTimeout(function () {
       var success = wrap.querySelector('.form-success');
       if (success) {
@@ -212,23 +227,45 @@
           newForm.addEventListener('submit', handleFormSubmit);
         }
       }
-    }, 4000);
+    }, 8000);
   }
 
   var form = document.getElementById('contactForm');
   form.addEventListener('submit', handleFormSubmit);
 
-  // --- Nav background on scroll ---
+  // --- Nav scroll shadow (class toggle, not inline style) ---
   var nav = document.getElementById('nav');
   var scrolled = false;
 
+  // --- Sticky mobile CTA ---
+  var stickyCta = document.getElementById('stickyCta');
+  var heroSection = document.getElementById('hero');
+  var contactSection = document.getElementById('contact');
+  var stickyVisible = false;
+
   window.addEventListener('scroll', function () {
+    // Nav shadow
     if (window.scrollY > 60 && !scrolled) {
-      nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
+      nav.classList.add('nav--scrolled');
       scrolled = true;
     } else if (window.scrollY <= 60 && scrolled) {
-      nav.style.boxShadow = 'none';
+      nav.classList.remove('nav--scrolled');
       scrolled = false;
+    }
+
+    // Sticky CTA: show after hero, hide near contact
+    if (stickyCta && heroSection && contactSection) {
+      var heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      var contactTop = contactSection.offsetTop - window.innerHeight * 0.5;
+      var shouldShow = window.scrollY > heroBottom && window.scrollY < contactTop;
+
+      if (shouldShow && !stickyVisible) {
+        stickyCta.classList.add('visible');
+        stickyVisible = true;
+      } else if (!shouldShow && stickyVisible) {
+        stickyCta.classList.remove('visible');
+        stickyVisible = false;
+      }
     }
   }, { passive: true });
 

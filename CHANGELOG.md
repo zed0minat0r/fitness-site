@@ -2,6 +2,17 @@
 
 ## 2026-03-30
 
+### Refiner Pass: Audit Top Fixes (Rec #1, #2, #5 + bonus)
+- Hero: multi-layer gradient background with warm radials for visual energy (Audit Rec #1)
+- Hero: subtle scanline overlay texture for depth
+- Trainers: replaced CSS dot-face avatars with styled SVG silhouettes in circular frames (Audit Rec #2)
+- Sticky mobile CTA: floating "Start Free Trial" button, appears after hero, hides near contact (Audit Rec #5)
+- Nav: tap-outside-to-close via backdrop overlay (usability gap from audit)
+- Nav: scroll shadow uses CSS class toggle instead of inline style mutation
+- Form: reset timeout extended from 4s to 8s so users can read confirmation
+- Typography: replaced double-dashes (--) with proper em dashes throughout
+- Added CSS for new class-card elements (intensity bars, duration badges, cert badges, stat dividers, CTA pulse)
+
 ### Enhancement Pass: Mobile-First Polish & Conversion Features
 - Animated stat counters in hero with count-up on scroll (IntersectionObserver)
 - Hero stats bar redesigned with card background and dividers
