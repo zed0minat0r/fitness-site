@@ -91,4 +91,12 @@
 ### Initial Setup
 - Iron & Flow Fitness — boutique fitness studio
 - Dark energetic palette: #1a1a1a, #FF6B35, #F5F5F5
+
+### Spark — Instagram Grid Shimmer (Section 10)
+- Added staggered diagonal shimmer animation across all 6 Instagram placeholder cells, making the grid feel alive like a loading feed
+- Each cell has a unique animation-delay (0s–3s) so the shimmer cascades across the grid
+- Tap feedback: cells scale down slightly (0.97) with orange border highlight, label pops to full opacity and scales up
+- Bumped label opacity from 0.5 to 0.65 and font-size from 0.75rem to 0.8rem for better mobile scanability
+- Light theme gets brighter shimmer pass; reduced-motion users are covered by existing wildcard rule
+- CSS-only, no JS added
 - 3 tasks defined, agent team deploying
