@@ -2,6 +2,16 @@
 
 ## 2026-03-30
 
+### Task 2 & 3: Visual Polish + Content & Conversion
+- Free trial CTA banner with orange gradient between pricing and testimonials
+- FAQ accordion section (5 items) with open/close toggle and orange border highlight
+- Staggered fade-in animations for card grids (classes, trainers, pricing, testimonials)
+- Mobile tap feedback micro-interactions on all cards (scale on touch)
+- Active nav section highlighting on scroll
+- Hero radial gradient overlay for depth
+- FAQ link added to navigation
+- TASKS.md updated: Tasks 2 & 3 marked complete
+
 ### Task 1: Full Site Build
 - Built complete single-page site: index.html, style.css, main.js
 - Hero section with bold headline, stats bar (500+ members, 40+ classes/week, 8 coaches), dual CTAs

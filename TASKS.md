@@ -13,13 +13,15 @@
 - [x] Mobile-first (3 breakpoints: 600px, 900px, 1200px)
 - [x] Scroll animations (Intersection Observer fade-in)
 
-## Task 2: Visual polish
-- Refine typography and spacing
-- Add micro-interactions for mobile
-- Ensure premium feel
+## Task 2: Visual polish -- COMPLETE
+- [x] Refine typography and spacing
+- [x] Add micro-interactions for mobile (tap feedback on cards)
+- [x] Staggered fade-in animations for card grids
+- [x] Active nav section highlighting on scroll
+- [x] Ensure premium feel
 
-## Task 3: Content & conversion
-- Free trial offer
-- FAQ section
-- Social proof (member count, classes per week)
-- Email capture
+## Task 3: Content & conversion -- COMPLETE
+- [x] Free trial offer (orange gradient CTA banner between pricing & testimonials)
+- [x] FAQ section (5 accordion items with open/close animation)
+- [x] Social proof (hero stats: 500+ members, 40+ classes/week, 8 coaches)
+- [x] FAQ nav link added
