@@ -237,6 +237,41 @@
   var form = document.getElementById('contactForm');
   form.addEventListener('submit', handleFormSubmit);
 
+  // --- Newsletter Form ---
+  function handleNewsletterSubmit(e) {
+    e.preventDefault();
+
+    var nlForm = e.target;
+    var emailInput = nlForm.querySelector('input[type="email"]');
+    if (!emailInput || !emailInput.value.trim()) {
+      if (emailInput) emailInput.style.borderColor = '#e74c3c';
+      return;
+    }
+    emailInput.style.borderColor = '';
+
+    var wrap = nlForm.parentElement;
+    var formHTML = nlForm.outerHTML;
+    nlForm.outerHTML = '<div class="form-success form-success--sm">' +
+      '<p><strong>You\'re subscribed!</strong> Class updates incoming.</p>' +
+      '</div>';
+
+    setTimeout(function () {
+      var success = wrap.querySelector('.form-success--sm');
+      if (success) {
+        success.outerHTML = formHTML;
+        var newNl = document.getElementById('newsletterForm');
+        if (newNl) {
+          newNl.addEventListener('submit', handleNewsletterSubmit);
+        }
+      }
+    }, 5000);
+  }
+
+  var nlForm = document.getElementById('newsletterForm');
+  if (nlForm) {
+    nlForm.addEventListener('submit', handleNewsletterSubmit);
+  }
+
   // --- Nav scroll shadow (class toggle, not inline style) ---
   var nav = document.getElementById('nav');
   var scrolled = false;

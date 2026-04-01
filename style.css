@@ -1278,6 +1278,8 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   font-size: 1.4rem;
 }
 .form-success p { color: var(--text-sec); }
+.form-success--sm { text-align: center; padding: 16px 12px; }
+.form-success--sm p { color: var(--orange); font-size: 0.875rem; }
 
 /* --- NAV SCROLL STATE --- */
 .nav--scrolled {
@@ -1286,15 +1288,18 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
 
 /* --- NAV BACKDROP (tap outside to close) --- */
 .nav__backdrop {
-  display: none;
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
   -webkit-tap-highlight-color: transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 .nav__backdrop.active {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* (Duplicate selectors removed — see originals above for:
@@ -1512,6 +1517,19 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
 .insta-placeholder:active {
   border-color: var(--orange);
 }
+/* --- Instagram cell gradients --- */
+.insta-placeholder--1 { background: linear-gradient(135deg, rgba(255,107,0,0.25), rgba(255,60,0,0.10)); }
+.insta-placeholder--2 { background: linear-gradient(160deg, rgba(255,140,50,0.20), rgba(180,100,255,0.12)); }
+.insta-placeholder--3 { background: linear-gradient(200deg, rgba(255,80,0,0.22), rgba(255,180,50,0.10)); }
+.insta-placeholder--4 { background: linear-gradient(110deg, rgba(255,50,50,0.20), rgba(255,120,0,0.15)); }
+.insta-placeholder--5 { background: linear-gradient(180deg, rgba(100,180,255,0.18), rgba(140,100,255,0.12)); }
+.insta-placeholder--6 { background: linear-gradient(145deg, rgba(255,200,0,0.20), rgba(255,107,0,0.18)); }
+[data-theme="light"] .insta-placeholder--1 { background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,60,0,0.06)); }
+[data-theme="light"] .insta-placeholder--2 { background: linear-gradient(160deg, rgba(255,140,50,0.12), rgba(180,100,255,0.08)); }
+[data-theme="light"] .insta-placeholder--3 { background: linear-gradient(200deg, rgba(255,80,0,0.14), rgba(255,180,50,0.06)); }
+[data-theme="light"] .insta-placeholder--4 { background: linear-gradient(110deg, rgba(255,50,50,0.12), rgba(255,120,0,0.08)); }
+[data-theme="light"] .insta-placeholder--5 { background: linear-gradient(180deg, rgba(100,180,255,0.12), rgba(140,100,255,0.08)); }
+[data-theme="light"] .insta-placeholder--6 { background: linear-gradient(145deg, rgba(255,200,0,0.14), rgba(255,107,0,0.10)); }
 /* .insta-icon removed — unused in markup */
 .insta-label {
   font-size: 0.75rem;
@@ -1678,6 +1696,8 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   .vibe-tag { padding: 8px 14px; font-size: 0.75rem; }
   .quick-actions { gap: 8px; }
   .quick-action { padding: 12px 6px; }
+  .newsletter-form { flex-direction: column; }
+  .newsletter-form .btn--sm { width: 100%; }
   .footer__top { gap: 24px; margin-bottom: 24px; }
   .contact-info h3 { font-size: 1.4rem; margin-bottom: 20px; }
 }
