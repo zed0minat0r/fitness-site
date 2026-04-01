@@ -67,12 +67,12 @@
   });
 
   // --- Contact Form ---
-  var form = document.getElementById('contactForm');
-  form.addEventListener('submit', function (e) {
+  function handleFormSubmit(e) {
     e.preventDefault();
 
+    var currentForm = e.target;
     // Simple validation visual
-    var inputs = form.querySelectorAll('[required]');
+    var inputs = currentForm.querySelectorAll('[required]');
     var valid = true;
     inputs.forEach(function (input) {
       if (!input.value.trim()) {
@@ -86,9 +86,9 @@
     if (!valid) return;
 
     // Show success state
-    var wrap = form.parentElement;
-    var formHTML = form.outerHTML;
-    form.outerHTML = '<div class="form-success">' +
+    var wrap = currentForm.parentElement;
+    var formHTML = currentForm.outerHTML;
+    currentForm.outerHTML = '<div class="form-success">' +
       '<h3>You\'re In!</h3>' +
       '<p>We\'ll reach out within 24 hours to book your free class. Get ready to sweat.</p>' +
       '</div>';
@@ -101,11 +101,14 @@
         // Re-bind form
         var newForm = document.getElementById('contactForm');
         if (newForm) {
-          newForm.addEventListener('submit', arguments.callee);
+          newForm.addEventListener('submit', handleFormSubmit);
         }
       }
     }, 4000);
-  });
+  }
+
+  var form = document.getElementById('contactForm');
+  form.addEventListener('submit', handleFormSubmit);
 
   // --- Nav background on scroll ---
   var nav = document.getElementById('nav');
