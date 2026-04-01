@@ -2,6 +2,21 @@
 
 ## 2026-03-30
 
+### Enhancement Pass: Mobile-First Polish & Conversion Features
+- Animated stat counters in hero with count-up on scroll (IntersectionObserver)
+- Hero stats bar redesigned with card background and dividers
+- Subtle pulse animation on primary CTA button
+- Class cards: added intensity indicator bars (1-4 levels) and duration badges
+- Trainer cards: added certification badge pills (CSCS, E-RYT 500, ACE, etc.)
+- Pricing: monthly/annual toggle with 20% savings, smooth price transitions
+- Testimonial cards: added result badges highlighting member achievements
+- FAQ upgraded from native details to custom accordion with chevron animation
+- Added 6th FAQ item (personal training)
+- Contact section: social proof bar with avatar stack + member count
+- Social media links (Instagram, TikTok, YouTube) added to contact info
+- Trial banner: responsive row layout at 600px+ breakpoint
+- All new features mobile-first, zero hover dependencies
+
 ### Task 2 & 3: Visual Polish + Content & Conversion
 - Free trial CTA banner with orange gradient between pricing and testimonials
 - FAQ accordion section (5 items) with open/close toggle and orange border highlight

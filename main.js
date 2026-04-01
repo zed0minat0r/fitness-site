@@ -6,11 +6,11 @@
   'use strict';
 
   // --- Hamburger Nav ---
-  const burger = document.getElementById('burger');
-  const navLinks = document.getElementById('navLinks');
+  var burger = document.getElementById('burger');
+  var navLinks = document.getElementById('navLinks');
 
   burger.addEventListener('click', function () {
-    const isOpen = navLinks.classList.toggle('open');
+    var isOpen = navLinks.classList.toggle('open');
     burger.classList.toggle('active');
     burger.setAttribute('aria-expanded', isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
@@ -43,17 +43,67 @@
       fadeObserver.observe(el);
     });
   } else {
-    // Fallback: show everything
     fadeEls.forEach(function (el) {
       el.classList.add('visible');
     });
+  }
+
+  // --- Animated Stat Counters ---
+  var statNums = document.querySelectorAll('.stat__num[data-count]');
+  var countersAnimated = false;
+
+  function animateCounters() {
+    if (countersAnimated) return;
+    countersAnimated = true;
+
+    statNums.forEach(function (el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1200;
+      var start = 0;
+      var startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        // Ease out cubic
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = Math.floor(eased * target);
+        el.textContent = current + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target + suffix;
+        }
+      }
+
+      requestAnimationFrame(step);
+    });
+  }
+
+  // Trigger counters when hero stats are visible
+  if ('IntersectionObserver' in window && statNums.length > 0) {
+    var statsSection = document.querySelector('.hero__stats');
+    if (statsSection) {
+      var statsObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounters();
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      statsObserver.observe(statsSection);
+    }
+  } else {
+    // Fallback
+    animateCounters();
   }
 
   // --- Theme Toggle ---
   var themeToggle = document.getElementById('themeToggle');
   var html = document.documentElement;
 
-  // Check saved preference
   var savedTheme = localStorage.getItem('if-theme');
   if (savedTheme) {
     html.setAttribute('data-theme', savedTheme);
@@ -66,12 +116,71 @@
     localStorage.setItem('if-theme', next);
   });
 
+  // --- Pricing Toggle (Monthly/Annual) ---
+  var pricingSwitch = document.getElementById('pricingSwitch');
+  if (pricingSwitch) {
+    var toggleLabels = document.querySelectorAll('.pricing-toggle__label');
+    var isAnnual = false;
+
+    pricingSwitch.addEventListener('click', function () {
+      isAnnual = !isAnnual;
+      pricingSwitch.setAttribute('aria-checked', isAnnual ? 'true' : 'false');
+
+      // Toggle active label styling
+      toggleLabels.forEach(function (label) {
+        var period = label.getAttribute('data-period');
+        if ((period === 'annual' && isAnnual) || (period === 'monthly' && !isAnnual)) {
+          label.classList.add('pricing-toggle__label--active');
+        } else {
+          label.classList.remove('pricing-toggle__label--active');
+        }
+      });
+
+      // Update prices
+      var cards = document.querySelectorAll('.pricing-card[data-monthly]');
+      cards.forEach(function (card) {
+        var price = isAnnual ? card.getAttribute('data-annual') : card.getAttribute('data-monthly');
+        var amountEl = card.querySelector('.price-amount');
+        if (amountEl) {
+          amountEl.style.opacity = '0';
+          setTimeout(function () {
+            amountEl.textContent = price;
+            amountEl.style.opacity = '1';
+          }, 150);
+        }
+      });
+    });
+  }
+
+  // --- FAQ Accordion ---
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    var btn = item.querySelector('.faq-item__q');
+    if (!btn) return;
+
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.contains('open');
+
+      // Close all others
+      faqItems.forEach(function (other) {
+        other.classList.remove('open');
+        var otherBtn = other.querySelector('.faq-item__q');
+        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle current
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
   // --- Contact Form ---
   function handleFormSubmit(e) {
     e.preventDefault();
 
     var currentForm = e.target;
-    // Simple validation visual
     var inputs = currentForm.querySelectorAll('[required]');
     var valid = true;
     inputs.forEach(function (input) {
@@ -98,7 +207,6 @@
       var success = wrap.querySelector('.form-success');
       if (success) {
         success.outerHTML = formHTML;
-        // Re-bind form
         var newForm = document.getElementById('contactForm');
         if (newForm) {
           newForm.addEventListener('submit', handleFormSubmit);
@@ -110,28 +218,9 @@
   var form = document.getElementById('contactForm');
   form.addEventListener('submit', handleFormSubmit);
 
-  // --- Nav background on scroll + Active section highlight ---
+  // --- Nav background on scroll ---
   var nav = document.getElementById('nav');
   var scrolled = false;
-  var sections = document.querySelectorAll('section[id]');
-  var navAnchors = navLinks.querySelectorAll('a[href^="#"]');
-
-  function updateActiveNav() {
-    var scrollPos = window.scrollY + 120;
-    sections.forEach(function (section) {
-      var top = section.offsetTop;
-      var height = section.offsetHeight;
-      var id = section.getAttribute('id');
-      if (scrollPos >= top && scrollPos < top + height) {
-        navAnchors.forEach(function (a) {
-          a.classList.remove('active');
-          if (a.getAttribute('href') === '#' + id) {
-            a.classList.add('active');
-          }
-        });
-      }
-    });
-  }
 
   window.addEventListener('scroll', function () {
     if (window.scrollY > 60 && !scrolled) {
@@ -141,7 +230,6 @@
       nav.style.boxShadow = 'none';
       scrolled = false;
     }
-    updateActiveNav();
   }, { passive: true });
 
 })();
