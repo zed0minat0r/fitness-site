@@ -2,6 +2,14 @@
 
 ## 2026-03-30
 
+### Builder Pass: Footer overhaul, hero texture, icon fixes
+- Footer: full 4-column grid layout (brand/nav/contact/CTA) with social links, address, and conversion CTA
+- Footer: theme toggle moved to bottom bar, mobile stacks to single column, 2-col at 600px+, 4-col at 900px+
+- Hero: added dotted texture overlay for visual depth and energy beyond flat gradients
+- Classes: replaced HIIT icon (was a house shape) with interval timer + plus icon
+- Classes: replaced Mobility icon (was a flame) with stretching figure silhouette
+- All changes mobile-first, light-mode compatible
+
 ### Refiner Pass: Audit Rec #1, #4 + hero enhancement
 - Hero: added conic gradient layer and third radial for richer visual depth and warm light sweep (Audit Rec #1)
 - Hero: diagonal accent line in overlay for subtle geometric energy
