@@ -151,17 +151,21 @@
         }
       });
 
-      // Update prices
+      // Update prices and period text
       var cards = document.querySelectorAll('.pricing-card[data-monthly]');
       cards.forEach(function (card) {
         var price = isAnnual ? card.getAttribute('data-annual') : card.getAttribute('data-monthly');
         var amountEl = card.querySelector('.price-amount');
+        var periodEl = card.querySelector('.price-period');
         if (amountEl) {
           amountEl.style.opacity = '0';
           setTimeout(function () {
             amountEl.textContent = price;
             amountEl.style.opacity = '1';
           }, 150);
+        }
+        if (periodEl) {
+          periodEl.textContent = isAnnual ? '/yr' : '/mo';
         }
       });
     });
@@ -268,5 +272,36 @@
       }
     }
   }, { passive: true });
+
+  // --- Testimonial Carousel Dots (mobile swipe) ---
+  var tGrid = document.querySelector('.testimonial-grid');
+  var tDots = document.querySelectorAll('.testimonial-dots span');
+  if (tGrid && tDots.length) {
+    function updateDots() {
+      var cards = tGrid.querySelectorAll('.testimonial-card');
+      var scrollLeft = tGrid.scrollLeft;
+      var gridWidth = tGrid.offsetWidth;
+      var closest = 0;
+      var minDist = Infinity;
+      for (var i = 0; i < cards.length; i++) {
+        var center = cards[i].offsetLeft + cards[i].offsetWidth / 2;
+        var dist = Math.abs(center - scrollLeft - gridWidth / 2);
+        if (dist < minDist) { minDist = dist; closest = i; }
+      }
+      tDots.forEach(function (d, idx) {
+        d.classList.toggle('active', idx === closest);
+      });
+    }
+    tGrid.addEventListener('scroll', updateDots, { passive: true });
+    tDots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var idx = parseInt(this.getAttribute('data-index'), 10);
+        var cards = tGrid.querySelectorAll('.testimonial-card');
+        if (cards[idx]) {
+          cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      });
+    });
+  }
 
 })();
