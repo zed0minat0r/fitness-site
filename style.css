@@ -1308,6 +1308,60 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   margin-bottom: 16px;
 }
 
+
+/* --- INSTAGRAM --- */
+.instagram { background: var(--bg-card); }
+[data-theme="light"] .instagram { background: #eee; }
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.insta-placeholder {
+  aspect-ratio: 1;
+  background: var(--bg);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition);
+}
+[data-theme="light"] .insta-placeholder {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.insta-placeholder:active {
+  border-color: var(--orange);
+}
+.insta-icon {
+  color: var(--text-sec);
+  opacity: 0.3;
+}
+.insta-cta {
+  text-align: center;
+}
+
+/* --- FOOTER ENHANCEMENTS --- */
+.footer__socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  justify-content: center;
+}
+.footer__nav {
+  text-align: center;
+}
+.footer__contact {
+  margin-top: 12px;
+}
+.footer__contact p {
+  font-size: 0.813rem;
+  color: var(--text-sec);
+  line-height: 1.6;
+}
+
 /* ============================================
    BREAKPOINT 1: 600px+
    ============================================ */
@@ -1360,6 +1414,9 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   .footer__inner { flex-direction: row; justify-content: space-between; }
 
   .sticky-cta { display: none; }
+  .insta-grid { grid-template-columns: repeat(6, 1fr); gap: 16px; }
+  .footer__nav { text-align: left; }
+  .footer__socials { justify-content: flex-start; }
 }
 
 /* ============================================
