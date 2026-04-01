@@ -763,6 +763,51 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
   margin-bottom: 16px;
   font-style: italic;
 }
+.testimonial-card__progress {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.progress-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-sec);
+  min-width: 72px;
+  flex-shrink: 0;
+}
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+[data-theme="light"] .progress-bar {
+  background: rgba(0, 0, 0, 0.08);
+}
+.progress-fill {
+  height: 100%;
+  background: var(--orange);
+  border-radius: 3px;
+  transition: width 0.8s ease;
+}
+.progress-val {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--orange);
+  min-width: 56px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
 .testimonial-card__result {
   margin-bottom: 16px;
 }
