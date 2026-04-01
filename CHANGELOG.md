@@ -2,6 +2,15 @@
 
 ## 2026-03-30
 
+### Refiner Pass: Audit Rec #1, #4 + hero enhancement
+- Hero: added conic gradient layer and third radial for richer visual depth and warm light sweep (Audit Rec #1)
+- Hero: diagonal accent line in overlay for subtle geometric energy
+- Instagram: new placeholder section with 6-cell grid and "Follow @ironandflow" CTA (Audit Rec #4, P1 requirement)
+- Footer: added social media links (Instagram, TikTok, YouTube) for brand presence
+- Footer: added contact info block (address, phone, email) for SEO and user convenience
+- Footer: restructured layout with brand/nav/socials columns for better visual weight
+- All additions mobile-first, responsive at 600px and 900px breakpoints
+
 ### Spark Pass: Mobile-First Section Enhancements
 - Hero: "What's your vibe?" quick-pick class type selector with tap-friendly pill tags (Strength, Flow, HIIT, Recovery)
 - Classes: "Popular" badge on HIIT Burn card with orange border highlight
